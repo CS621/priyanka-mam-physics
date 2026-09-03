@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #080711;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    padding: 16px;
+    color: #f1f5f9;
+    position: relative;
+}
+
+/* Ambient Dark Cosmic Glows */
+.ambient-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+}
+
+.glow-1 {
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+    top: -50px;
+    left: -50px;
+}
+
+.glow-2 {
+    width: 320px;
+    height: 320px;
+    background: #ff007f;
+    bottom: -60px;
+    right: -60px;
+}
+
+.glow-3 {
+    width: 250px;
+    height: 250px;
+    background: #7928ca;
+    top: 40%;
+    left: 30%;
+}
+
+/* Dynamic Background Cosmic Orbits */
+.space-orbits {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.15;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px dashed #00d2ff;
+    border-radius: 50%;
+}
+
+.ring-main {
+    transform: rotateX(72deg) rotateY(25deg);
+    animation: rotateOrbit 12s linear infinite;
+}
+
+.ring-sub {
+    border-color: #ff007f;
+    transform: rotateX(72deg) rotateY(145deg);
+    animation: rotateOrbit 16s linear infinite reverse;
+}
+
+.ring-third {
+    border-color: #ffbe0b;
+    transform: rotateX(30deg) rotateY(80deg);
+    animation: rotateOrbit 20s linear infinite;
+}
+
+@keyframes rotateOrbit {
+    from { transform: rotateX(72deg) rotateY(25deg) rotateZ(0deg); }
+    to { transform: rotateX(72deg) rotateY(25deg) rotateZ(360deg); }
+}
+
+/* Glassmorphism Main Card Container */
+.card-wrapper {
+    background: rgba(18, 20, 29, 0.78);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 32px;
+    padding: 28px 22px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    position: relative;
+    z-index: 10;
+}
+
+/* Progress Track (10 Stages) */
+.progress-track {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(90deg, #00d2ff, #ff007f, #ffbe0b);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 20px;
+}
+
+/* Stage Animations */
+.stage {
+    display: none;
+    animation: stageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stage.active {
+    display: block;
+}
+
+@keyframes stageFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pill-badge {
+    display: inline-block;
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 210, 255, 0.25);
+}
+
+.gold-badge {
+    background: rgba(255, 190, 11, 0.12);
+    color: #ffbe0b;
+    border-color: rgba(255, 190, 11, 0.3);
+}
+
+.hero-icon {
+    font-size: 52px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.glow-pulse {
+    animation: pulseIcon 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseIcon {
+    from { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0,210,255,0.4)); }
+    to { transform: scale(1.08); filter: drop-shadow(0 0 15px rgba(0,210,255,0.8)); }
+}
+
+.main-title, .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.gradient-head {
+    background: linear-gradient(135deg, #ff007f, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+}
+
+.subtitle {
+    font-size: 13.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* Primary CTA Button */
+.cta-btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    touch-action: manipulation;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #00d2ff, #0072ff);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 210, 255, 0.3);
+}
+
+.primary-btn:active {
+    transform: scale(0.97);
+}
+
+.primary-btn.locked {
+    opacity: 0.4;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.quote-card {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px;
+    border-radius: 20px;
+    border-left: 3px solid #ff007f;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.student-quote {
+    border-left-color: #ffbe0b;
+    background: rgba(255, 190, 11, 0.04);
+}
+
+.quote-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+/* Slider Box */
+.slider-box {
+    margin: 20px 0 28px;
+}
+
+.value-display {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #00d2ff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+input[type=range] {
+    width: 100%;
+    accent-color: #00d2ff;
+    height: 6px;
+    border-radius: 10px;
+}
+
+/* Dodgy Section */
+.dodgy-actions {
+    display: flex;
+    gap: 12px;
+    min-height: 60px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+    width: 60%;
+}
+
+.dodge-btn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);
+    width: 35%;
+    position: absolute;
+    right: 0;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hint-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f59e0b;
+    margin-top: 16px;
+    min-height: 18px;
+}
+
+/* Quiz Stack (Stage 6) */
+.quiz-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quiz-option {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 13px 18px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:active {
+    transform: scale(0.97);
+}
+
+.correct-opt {
+    background: linear-gradient(135deg, #ff007f, #7928ca);
+    border: none;
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.35);
+}
+
+/* Formula Box (Stage 7) */
+.formula-box {
+    background: rgba(0, 210, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 16px;
+    border-radius: 18px;
+    margin-bottom: 18px;
+}
+
+.formula-box code {
+    font-family: 'Outfit', monospace;
+    font-size: 14px;
+    font-weight: 800;
+    color: #00d2ff;
+}
+
+/* Trophy Trigger (Stage 8) */
+.trophy-trigger {
+    margin: 20px auto 10px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.trophy-emoji {
+    font-size: 76px;
+    position: relative;
+    z-index: 2;
+    animation: trophyFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.trophy-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    background: radial-gradient(circle, rgba(255, 190, 11, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 1;
+}
+
+/* Final Stage Card (Stage 9) */
+.final-card {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.final-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+/* Chandrashekhar Master Signature Card (Stage 10) */
+.master-signature-card {
+    background: linear-gradient(135deg, rgba(255, 190, 11, 0.08), rgba(0, 210, 255, 0.08));
+    border: 1px dashed rgba(255, 190, 11, 0.4);
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.star-badge {
+    display: inline-block;
+    background: rgba(255, 190, 11, 0.2);
+    color: #ffbe0b;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.sig-text {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.sig-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffbe0b, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+}
+
+.sig-tag {
+    font-size: 12px;
+    color: #00d2ff;
+    font-weight: 700;
+}
+
+.replay-btn {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35);
+}

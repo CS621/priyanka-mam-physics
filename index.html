@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Priyanka Mam - Quantum Physics Universe 🪐</title>
+
+    <!-- Ultra-Premium Aesthetic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Dark Cosmic Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Dynamic Space Orbits -->
+    <div class="space-orbits">
+        <div class="orbit-ring ring-main"></div>
+        <div class="orbit-ring ring-sub"></div>
+        <div class="orbit-ring ring-third"></div>
+    </div>
+
+    <!-- Main Glassmorphism Master Card -->
+    <main class="card-wrapper">
+
+        <!-- Progress Indicator Track (10 Stages) -->
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- STAGE 1: EVENT HORIZON ENTRANCE -->
+        <section id="stage1" class="stage active">
+            <div class="pill-badge">QUANTUM HORIZON ⚡</div>
+            <div class="hero-icon glow-pulse">🌌</div>
+            <h1 class="main-title">Cosmic Entrance</h1>
+            <p class="subtitle">Welcome Priyanka Mam! Entering an exclusive 10-Stage Quantum Multiverse crafted with pure respect & positive energy!</p>
+            <button class="cta-btn primary-btn" onclick="nextStage(1, 2)">
+                <span>Start Quantum Sequence</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </section>
+
+        <!-- STAGE 2: TEACHER PRAISE - THE AURA -->
+        <section id="stage2" class="stage">
+            <div class="pill-badge">TEACHER LOG ⚛️</div>
+            <div class="hero-icon">✨</div>
+            <h2 class="section-title">The Unmatched Teaching Aura</h2>
+            <div class="quote-card">
+                <p>"Physics naturally tough subject lagta hai sabko, par Priyanka Mam jab padhati hain, toh sabse complex formulas bhi ek kahani jaise smooth aur crystal clear lagne lagte hain!" 💡</p>
+            </div>
+            <button class="cta-btn primary-btn" onclick="nextStage(2, 3)">
+                <span>Explore Next Log</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </section>
+
+        <!-- STAGE 3: STUDENT CORNER - CHANDRASHEKHAR -->
+        <section id="stage3" class="stage">
+            <div class="pill-badge gold-badge">STUDENT CORNER 🌟</div>
+            <div class="hero-icon">👨‍🎓</div>
+            <h2 class="section-title">A Message From Chandrashekhar</h2>
+            <div class="quote-card student-quote">
+                <p>"Aapke constant guidance aur teaching style ne Physics ko mera favorite subject bana diya hai. Aapka hardworking student Chandrashekhar aapke dedicated efforts ki hamesha respect karta hai!" 🫡🔥</p>
+            </div>
+            <button class="cta-btn primary-btn" onclick="nextStage(3, 4)">
+                <span>Enter Energy Lab</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </section>
+
+        <!-- STAGE 4: ENERGY CALIBRATOR (SLIDER) -->
+        <section id="stage4" class="stage">
+            <div class="pill-badge">LAB CALIBRATOR ⚡</div>
+            <div class="hero-icon">🔋</div>
+            <h2 class="section-title">Quantum Class Vibe</h2>
+            <p class="subtitle">Drag slider to 100% to sync Priyanka Mam's maximum teaching energy!</p>
+
+            <div class="slider-box">
+                <div class="value-display" id="sliderVal">50%</div>
+                <input type="range" id="energyRange" min="0" max="100" value="50" oninput="handleSlider(this.value)">
+            </div>
+
+            <button class="cta-btn primary-btn locked" id="stage4Btn" onclick="nextStage(4, 5)">
+                <span>100% Energy Synced! Proceed</span>
+            </button>
+        </section>
+
+        <!-- STAGE 5: PHYSICS TRUTH & DODGY NO BUTTON -->
+        <section id="stage5" class="stage">
+            <div class="pill-badge">MULTIVERSE TRUTH 🪐</div>
+            <div class="hero-icon">👑</div>
+            <h2 class="section-title">World's Coolest Teacher?</h2>
+            <p class="subtitle">Is Priyanka Mam officially the most inspiring, sharpest & favorite Physics Teacher in the galaxy?</p>
+
+            <div class="dodgy-actions">
+                <button class="cta-btn yes-btn" onclick="nextStage(5, 6)">YES! 100% Guaranteed 💯</button>
+                <button class="cta-btn dodge-btn" id="noBtn" ontouchstart="dodgeNoBtn()" onclick="dodgeNoBtn()">NO 😜</button>
+            </div>
+            <p id="dodgyHint" class="hint-text"></p>
+        </section>
+
+        <!-- STAGE 6: PHYSICS LAWS QUIZ -->
+        <section id="stage6" class="stage">
+            <div class="pill-badge">GRAVITY PARADOX 🍎</div>
+            <div class="hero-icon">🧲</div>
+            <h2 class="section-title">The Strongest Attraction</h2>
+            <p class="subtitle">According to science, universe mein sabse strong pull kiska hota hai?</p>
+
+            <div class="quiz-stack">
+                <button class="quiz-option" onclick="wrongQuizChoice(this)">Black Hole's Gravitational Pull 🕳️</button>
+                <button class="quiz-option" onclick="wrongQuizChoice(this)">Superconductor Magnetic Force ⚡</button>
+                <button class="quiz-option correct-opt" onclick="nextStage(6, 7)">Priyanka Mam's Physics Class! ✨</button>
+            </div>
+            <p id="quizError" class="hint-text"></p>
+        </section>
+
+        <!-- STAGE 7: FORMULA DECRYPTION -->
+        <section id="stage7" class="stage">
+            <div class="pill-badge">QUANTUM FORMULA 🔬</div>
+            <div class="hero-icon">🧬</div>
+            <h2 class="section-title">The Master Formula</h2>
+            <div class="formula-box">
+                <code>E = M × C² + (Priyanka Mam's Magic)</code>
+            </div>
+            <p class="subtitle">Physics equation complete! Energy and inspiration are at maximum infinity!</p>
+
+            <button class="cta-btn primary-btn" onclick="nextStage(7, 8)">
+                <span>Unlock Honors</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </section>
+
+        <!-- STAGE 8: TROPHY REVEAL -->
+        <section id="stage8" class="stage">
+            <div class="pill-badge gold-badge">SPECIAL HONORS 🏆</div>
+            <h2 class="section-title">Best Physics Teacher 2026</h2>
+            <p class="subtitle">Tap the Golden Atomic Trophy to unlock your official Teacher's Day card!</p>
+
+            <div class="trophy-trigger" onclick="nextStage(8, 9)">
+                <div class="trophy-glow"></div>
+                <div class="trophy-emoji">🏆</div>
+            </div>
+        </section>
+
+        <!-- STAGE 9: HEARTFELT TEACHER'S DAY CARD -->
+        <section id="stage9" class="stage">
+            <div class="pill-badge gold-badge">HAPPY TEACHER'S DAY 🎉</div>
+            <div class="hero-icon">❤️</div>
+            <h1 class="main-title gradient-head">Priyanka Mam You Are The Best!</h1>
+
+            <div class="final-card">
+                <p><b>Respected Priyanka Mam,</b><br><br>
+                Thank you so much for making Physics logically simple, insanely interesting, and full of enthusiasm! Aapka patience, teaching style, aur student support unique hai.<br><br>
+                Wishing you a stellar Teacher's Day filled with happiness, healthy vibes, and continuous success! ⚛️✨</p>
+            </div>
+
+            <button class="cta-btn primary-btn" onclick="nextStage(9, 10)">
+                <span>Final Dedication Note</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </section>
+
+        <!-- STAGE 10: GRAND FINALE & SIGNATURE -->
+        <section id="stage10" class="stage">
+            <div class="pill-badge gold-badge">PERFECT FINALE 👑</div>
+            <div class="hero-icon">🎓</div>
+            <h2 class="section-title">A Special Dedication</h2>
+
+            <div class="master-signature-card">
+                <div class="star-badge">TOP STUDENT DEDICATION</div>
+                <p class="sig-text">Designed & Programmed with utmost respect by</p>
+                <h3 class="sig-name">CHANDRASHEKHAR</h3>
+                <p class="sig-tag">Your hard-working, top student! 🚀</p>
+            </div>
+
+            <button class="cta-btn replay-btn" onclick="restartExperience()">
+                <span>Replay Quantum Journey 🔄</span>
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Confetti Library CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
